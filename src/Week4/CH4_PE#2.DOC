@@ -1,16 +1,73 @@
-ISAAC HENDERSON JUN 8 2025
-This program checks an email and returns a spam score based on the text of an email. 
+Name: Isaac Henderson
+Date Created: June 8, 2024
 
+Program Description:
+This program analyzes an email message and calculates a spam score based on the presence of specific keywords in the text. The program uses a predefined list of 30 spam-related keywords to evaluate the email content and provides a spam assessment based on the number of keyword matches found.
 
-I first create a case sensitive function that takes the users email and makes it all lowercase to match our keywords in the list. 
+Functions used in the Program (list in order as they are called):
 
+1. Function Name: case_sensitive
+Description: Converts the input email text to lowercase to ensure case-insensitive keyword matching
+Parameters: email (string) - The email text to be converted
+Variables: 
+- email (string) - Stores the input email text
+Logical Steps:
+1. Take the input email text
+2. Convert all characters to lowercase using string.lower()
+3. Return the lowercase version of the text
+Returns: string - The email text in lowercase
 
-I crate a Function to generate a spam score 
+2. Function Name: generate_spam_score
+Description: Analyzes the email text and calculates a spam score based on keyword matches
+Parameters: email (string) - The email text to be analyzed
+Variables:
+- score (integer) - Running total of spam score
+- email_lower (string) - Lowercase version of the input email
+- SPAM_KEYWORDS (list) - List of 30 predefined spam-related keywords
+Logical Steps:
+1. Initialize score counter to 0
+2. Convert email to lowercase using case_sensitive function
+3. Check each keyword in SPAM_KEYWORDS against the email
+4. Increment score for each keyword match
+5. Return appropriate message based on score:
+   - Score ≥ 3: "This email is spam"
+   - Score = 2: "This email is likely spam"
+   - Score = 1: "This email is not spam but does contain some spam keywords"
+   - Score = 0: "This email is not spam"
+Returns: string - Message containing the spam score and assessment
 
-It takes the users input email from the case sensitive function and generates a score based on how many keywords it has 
+3. Function Name: check_spam
+Description: Wrapper function that processes the email and returns the spam score
+Parameters: email (string) - The email text to be checked
+Variables:
+- email (string) - The input email text
+Logical Steps:
+1. Call generate_spam_score with the email
+2. Return the result
+Returns: string - The spam score message from generate_spam_score
 
-Then i have a function that takes an email and returns the score 
+4. Function Name: main
+Description: Entry point of the program that handles user input and displays results
+Parameters: None
+Variables:
+- email (string) - Stores the user's input email
+- result (string) - Stores the spam score message
+Logical Steps:
+1. Display welcome message
+2. Prompt user for email input
+3. Call check_spam function with user input
+4. Display the spam score result
+Returns: None
 
-the i have the Main function that takes the user input and calls the check spam function that takes the email and returns the score 
+Logical Steps:
+1. Program starts with main() function
+2. User is prompted to enter an email
+3. Email is processed through check_spam()
+4. check_spam() calls generate_spam_score()
+5. generate_spam_score() uses case_sensitive() to convert text
+6. Score is calculated based on keyword matches
+7. Final spam assessment is displayed to the user
 
+Link to repository: https://github.com/theisaachendo/COP2373
 
+Output Screenshot: [Screenshot from src/Screenshots/week4pe2.png]
