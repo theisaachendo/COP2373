@@ -1,0 +1,16 @@
+ISAAC HENDERSON JUN 8 2025
+This program checks an email and returns a spam score based on the text of an email. 
+
+
+I first create a case sensitive function that takes the users email and makes it all lowercase to match our keywords in the list. 
+
+
+I crate a Function to generate a spam score 
+
+It takes the users input email from the case sensitive function and generates a score based on how many keywords it has 
+
+Then i have a function that takes an email and returns the score 
+
+the i have the Main function that takes the user input and calls the check spam function that takes the email and returns the score 
+
+
